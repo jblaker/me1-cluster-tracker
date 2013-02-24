@@ -1,0 +1,4 @@
+build/*
+ClusterBuddy.xcodeproj/project.xcworkspace/xcuserdata/jblaker.xcuserdatad/WorkspaceSettings.xcsettings
+ClusterBuddy.xcodeproj/project.xcworkspace/xcuserdata/jblaker.xcuserdatad/UserInterfaceState.xcuserstate
+.DS_Store
