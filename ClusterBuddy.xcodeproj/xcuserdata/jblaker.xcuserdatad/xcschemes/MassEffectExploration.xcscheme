@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E9C5A53116D9835E008B1628"
                BuildableName = "MassEffectExploration.app"
-               BlueprintName = "MassEffectExploration"
-               ReferencedContainer = "container:MassEffectExploration.xcodeproj">
+               BlueprintName = "ClusterBuddy"
+               ReferencedContainer = "container:ClusterBuddy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E9C5A53116D9835E008B1628"
             BuildableName = "MassEffectExploration.app"
-            BlueprintName = "MassEffectExploration"
-            ReferencedContainer = "container:MassEffectExploration.xcodeproj">
+            BlueprintName = "ClusterBuddy"
+            ReferencedContainer = "container:ClusterBuddy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E9C5A53116D9835E008B1628"
             BuildableName = "MassEffectExploration.app"
-            BlueprintName = "MassEffectExploration"
-            ReferencedContainer = "container:MassEffectExploration.xcodeproj">
+            BlueprintName = "ClusterBuddy"
+            ReferencedContainer = "container:ClusterBuddy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E9C5A53116D9835E008B1628"
             BuildableName = "MassEffectExploration.app"
-            BlueprintName = "MassEffectExploration"
-            ReferencedContainer = "container:MassEffectExploration.xcodeproj">
+            BlueprintName = "ClusterBuddy"
+            ReferencedContainer = "container:ClusterBuddy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

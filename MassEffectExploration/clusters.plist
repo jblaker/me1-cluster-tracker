@@ -7,6 +7,8 @@
     <dict>
       <key>name</key>
       <string>Artemis Tau</string>
+      <key>infoURL</key>
+      <string>http://masseffect.wikia.com/wiki/Artemis_Tau</string>
       <key>systems</key>
       <array>
         <dict>
@@ -61,12 +63,16 @@
 		<dict>
 			<key>name</key>
 			<string>Armstrong Nebula</string>
+      <key>infoURL</key>
+      <string>http://masseffect.wikia.com/wiki/Armstrong_Nebula</string>
 			<key>systems</key>
 			<array/>
 		</dict>
 		<dict>
 			<key>name</key>
 			<string>Argos Rho</string>
+      <key>infoURL</key>
+      <string>http://masseffect.wikia.com/wiki/Argos_Rho</string>
 			<key>systems</key>
 			<array>
 				<dict>

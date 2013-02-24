@@ -53,8 +53,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
   SystemsViewController *systemsVC = [[SystemsViewController alloc] init];
-  [systemsVC setSystems:[[_clusters objectAtIndex:indexPath.row] objectForKey:@"systems"]];
-  [systemsVC setTitle:[NSString stringWithFormat:@"%@", [[_clusters objectAtIndex:indexPath.row] objectForKey:@"name"]]];
+  [systemsVC setSystemDictionary:[_clusters objectAtIndex:indexPath.row]];
   [[self navigationController ] pushViewController:systemsVC animated:YES];
 }
 

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SystemsViewController : UITableViewController
+@interface SystemsViewController : UITableViewController {
+  NSArray *_systems;
+}
 
-@property (nonatomic, retain) NSArray *systems;
+@property (nonatomic, retain) NSDictionary *systemDictionary;
 
 @end

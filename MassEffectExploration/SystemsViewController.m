@@ -8,10 +8,31 @@
 
 #import "SystemsViewController.h"
 #import "PlanetsViewController.h"
+#import "WebViewController.h"
 
 @implementation SystemsViewController
 
-@synthesize systems=_systems;
+@synthesize systemDictionary=_systemDictionary;
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  
+  [self setTitle:[_systemDictionary objectForKey:@"name"]];
+  
+  _systems = [_systemDictionary objectForKey:@"systems"];
+  
+  UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithTitle:@"Info" style:UIBarButtonItemStylePlain target:self action:@selector(launchWebView:)];
+  
+  [[self navigationItem] setRightBarButtonItem:infoButton];
+  
+}
+
+- (void)launchWebView:(id)sender {
+  WebViewController *webVC = [[WebViewController alloc] init];
+  [webVC setUrlToLoad:[_systemDictionary objectForKey:@"infoURL"]];
+  [webVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+  [self presentViewController:webVC animated:YES completion:nil];
+}
 
 #pragma mark - Table view data source
 
