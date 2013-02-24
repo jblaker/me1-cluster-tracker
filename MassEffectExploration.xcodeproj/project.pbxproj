@@ -19,6 +19,9 @@
 		E9C5A54E16D9835E008B1628 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9C5A54D16D9835E008B1628 /* Default-568h@2x.png */; };
 		E9C5A55116D9835E008B1628 /* MassEffectExploration.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9C5A54F16D9835E008B1628 /* MassEffectExploration.xcdatamodeld */; };
 		E9C5A55816D983C1008B1628 /* clusters.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9C5A55716D983C1008B1628 /* clusters.plist */; };
+		E9E89C4416D9D8B600969980 /* ClustersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E89C4316D9D8B600969980 /* ClustersViewController.m */; };
+		E9E89C4716D9DB0800969980 /* SystemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E89C4616D9DB0800969980 /* SystemsViewController.m */; };
+		E9E89C4A16D9DC7300969980 /* PlanetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E89C4916D9DC7300969980 /* PlanetsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,12 @@
 		E9C5A54D16D9835E008B1628 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E9C5A55016D9835E008B1628 /* MassEffectExploration.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MassEffectExploration.xcdatamodel; sourceTree = "<group>"; };
 		E9C5A55716D983C1008B1628 /* clusters.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = clusters.plist; sourceTree = "<group>"; };
+		E9E89C4216D9D8B600969980 /* ClustersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClustersViewController.h; sourceTree = "<group>"; };
+		E9E89C4316D9D8B600969980 /* ClustersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClustersViewController.m; sourceTree = "<group>"; };
+		E9E89C4516D9DB0800969980 /* SystemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemsViewController.h; sourceTree = "<group>"; };
+		E9E89C4616D9DB0800969980 /* SystemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemsViewController.m; sourceTree = "<group>"; };
+		E9E89C4816D9DC7300969980 /* PlanetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetsViewController.h; sourceTree = "<group>"; };
+		E9E89C4916D9DC7300969980 /* PlanetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +95,7 @@
 		E9C5A53D16D9835E008B1628 /* MassEffectExploration */ = {
 			isa = PBXGroup;
 			children = (
+				E9E89C4116D9D8A000969980 /* View Controllers */,
 				E9C5A54616D9835E008B1628 /* AppDelegate.h */,
 				E9C5A54716D9835E008B1628 /* AppDelegate.m */,
 				E9C5A54F16D9835E008B1628 /* MassEffectExploration.xcdatamodeld */,
@@ -109,6 +119,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E9E89C4116D9D8A000969980 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E9E89C4216D9D8B600969980 /* ClustersViewController.h */,
+				E9E89C4316D9D8B600969980 /* ClustersViewController.m */,
+				E9E89C4516D9DB0800969980 /* SystemsViewController.h */,
+				E9E89C4616D9DB0800969980 /* SystemsViewController.m */,
+				E9E89C4816D9DC7300969980 /* PlanetsViewController.h */,
+				E9E89C4916D9DC7300969980 /* PlanetsViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,6 +139,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9C5A55416D9835E008B1628 /* Build configuration list for PBXNativeTarget "MassEffectExploration" */;
 			buildPhases = (
+				E9E89C3716D9D6A500969980 /* ShellScript */,
 				E9C5A52E16D9835E008B1628 /* Sources */,
 				E9C5A52F16D9835E008B1628 /* Frameworks */,
 				E9C5A53016D9835E008B1628 /* Resources */,
@@ -170,6 +194,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E9E89C3716D9D6A500969980 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((0x$bN))\nbN=$(($bN + 1))\nbN=$(printf \"%X\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E9C5A52E16D9835E008B1628 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -178,6 +218,9 @@
 				E9C5A54416D9835E008B1628 /* main.m in Sources */,
 				E9C5A54816D9835E008B1628 /* AppDelegate.m in Sources */,
 				E9C5A55116D9835E008B1628 /* MassEffectExploration.xcdatamodeld in Sources */,
+				E9E89C4416D9D8B600969980 /* ClustersViewController.m in Sources */,
+				E9E89C4716D9DB0800969980 /* SystemsViewController.m in Sources */,
+				E9E89C4A16D9DC7300969980 /* PlanetsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +335,7 @@
 				E9C5A55616D9835E008B1628 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

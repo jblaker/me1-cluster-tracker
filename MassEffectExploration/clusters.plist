@@ -4,6 +4,60 @@
 <dict>
 	<key>clusters</key>
 	<array>
+    <dict>
+      <key>name</key>
+      <string>Artemis Tau</string>
+      <key>systems</key>
+      <array>
+        <dict>
+          <key>name</key>
+          <string>Sparta</string>
+          <key>planets</key>
+          <array>
+            <string>Edolus</string>
+            <string>Ontamalca</string>
+            <string>Alsages</string>
+            <string>Tremanre</string>
+            <string>Altaaya</string>
+          </array>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Knossos</string>
+          <key>planets</key>
+          <array>
+            <string>Armeni</string>
+            <string>Phaistos</string>
+            <string>Therum</string>
+            <string>Zakros</string>
+            <string>Archanes</string>
+          </array>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Macedon</string>
+          <key>planets</key>
+          <array>
+            <string>Fargeluse</string>
+            <string>Patavig</string>
+            <string>Porolan</string>
+            <string>Sharjila</string>
+          </array>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Athens</string>
+          <key>planets</key>
+          <array>
+            <string>Salamis</string>
+            <string>Proteus</string>
+            <string>Circe</string>
+            <string>Nausicaa</string>
+            <string>Pharos</string>
+          </array>
+        </dict>
+      </array>
+    </dict>
 		<dict>
 			<key>name</key>
 			<string>Armstrong Nebula</string>

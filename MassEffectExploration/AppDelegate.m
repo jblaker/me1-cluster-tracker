@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ClustersViewController.h"
 
 @implementation AppDelegate
 
@@ -14,17 +15,18 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+@synthesize navController=_navController;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  // Override point for customization after application launch.
-  self.window.backgroundColor = [UIColor whiteColor];
+  [self prepareData];
+  self.window.rootViewController = _navController;
   [self.window makeKeyAndVisible];
-  [self readClustersPlist];
   return YES;
 }
 
-- (void)readClustersPlist {
+- (void)prepareData {
   
   NSURL *file = [[NSBundle mainBundle] URLForResource:@"clusters" withExtension:@"plist"];
   
@@ -32,16 +34,21 @@
   
   NSArray *clusters = [plistContents objectForKey:@"clusters"];
   
-  for ( NSDictionary *cluster in clusters ) {
-    NSLog(@"Added cluster %@", [cluster objectForKey:@"name"]);
-    NSArray *systems = [cluster objectForKey:@"systems"];
-    for (NSDictionary *system in systems) {
-      NSArray *planets = [system objectForKey:@"planets"];
-      for (NSString *planet in planets) {
-        NSLog(@"Planet %@ in system %@ in cluster %@", planet, [system objectForKey:@"name"], [cluster objectForKey:@"name"]);
-      }
-    }
-  }
+//  for ( NSDictionary *cluster in clusters ) {
+//    NSLog(@"Added cluster %@", [cluster objectForKey:@"name"]);
+//    NSArray *systems = [cluster objectForKey:@"systems"];
+//    for (NSDictionary *system in systems) {
+//      NSArray *planets = [system objectForKey:@"planets"];
+//      for (NSString *planet in planets) {
+//        NSLog(@"Planet %@ in system %@ in cluster %@", planet, [system objectForKey:@"name"], [cluster objectForKey:@"name"]);
+//      }
+//    }
+//  }
+  
+  ClustersViewController *clustersVC = [[ClustersViewController alloc] init];
+  [clustersVC setClusters:clusters];
+  
+  _navController = [[UINavigationController alloc] initWithRootViewController:clustersVC];
     
 }
 
