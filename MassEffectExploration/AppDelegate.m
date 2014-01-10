@@ -23,7 +23,13 @@
   [self prepareData];
   self.window.rootViewController = _navController;
   [self.window makeKeyAndVisible];
+  [self setupAppearances];
   return YES;
+}
+
+- (void)setupAppearances {
+  NSDictionary *navControllerTitleFont = [NSDictionary dictionaryWithObjects:@[[UIFont fontWithName:@"Mass Effect Game 123" size:20]] forKeys:@[UITextAttributeFont]];
+  [[UINavigationBar appearance] setTitleTextAttributes:navControllerTitleFont];
 }
 
 - (void)prepareData {

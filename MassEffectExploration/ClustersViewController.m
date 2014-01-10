@@ -16,6 +16,10 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self setTitle:@"Clusters"];
+  UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Milky_Way_Galaxy"]];
+  [backgroundImage setAlpha:0.5];
+  [self.tableView setBackgroundView:backgroundImage];
+  [self.tableView setBackgroundColor:[UIColor colorWithRed:62.0/255.0 green:70.0/255.0 blue:86.0/255.0 alpha:1.0]];
 }
 
 #pragma mark - Table view data source
@@ -43,6 +47,11 @@
   NSString *clusterName = [[_clusters objectAtIndex:indexPath.row] objectForKey:@"name"];
   
   [[cell textLabel] setText:clusterName];
+  [[cell textLabel] setTextColor:[UIColor whiteColor]];
+  
+  [[cell textLabel] setFont:[UIFont fontWithName:@"Mass Effect Game 123" size:12]];
+  
+  [cell setBackgroundColor:[UIColor clearColor]];
   
   return cell;
 }
