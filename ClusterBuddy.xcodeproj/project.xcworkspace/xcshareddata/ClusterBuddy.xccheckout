@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5F541BBB-832E-43E6-A070-8D840D7A860B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ClusterBuddy</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4BEB4E3E-2C25-498D-A956-72FBB178FF8C</key>
+		<string>https://github.com/jblaker/me1-cluster-tracker.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ClusterBuddy.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4BEB4E3E-2C25-498D-A956-72FBB178FF8C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jblaker/me1-cluster-tracker.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4BEB4E3E-2C25-498D-A956-72FBB178FF8C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4BEB4E3E-2C25-498D-A956-72FBB178FF8C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>me1-cluster-tracker</string>
+		</dict>
+	</array>
+</dict>
+</plist>
