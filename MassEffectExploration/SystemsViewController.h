@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SystemsViewController : UITableViewController {
-  NSArray *_systems;
-}
+@class Cluster;
 
-@property (nonatomic, retain) NSDictionary *systemDictionary;
+@interface SystemsViewController : UITableViewController<NSFetchedResultsControllerDelegate>
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) Cluster *cluster;
 
 @end

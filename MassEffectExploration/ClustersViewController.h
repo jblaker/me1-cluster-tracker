@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ClustersViewController : UITableViewController
+@interface ClustersViewController : UITableViewController<NSFetchedResultsControllerDelegate>
 
-@property (nonatomic, retain) NSArray *clusters;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end

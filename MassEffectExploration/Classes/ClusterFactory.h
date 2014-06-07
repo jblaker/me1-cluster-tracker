@@ -10,4 +10,6 @@
 
 @interface ClusterFactory : NSObject
 
++ (void)createClustersWithArray:(NSArray *)clusters;
+
 @end

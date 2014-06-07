@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Cluster" representedClassName="Cluster" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="systems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="System" inverseName="cluster" inverseEntity="System" syncable="YES"/>
     </entity>
     <entity name="Planet" representedClassName="Planet" syncable="YES">
+        <attribute name="explored" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="flagged" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
@@ -19,8 +20,8 @@
         <relationship name="planets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Planet" inverseName="system" inverseEntity="Planet" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Cluster" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="System" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Planet" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Cluster" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="Planet" positionX="0" positionY="0" width="128" height="133"/>
+        <element name="System" positionX="0" positionY="0" width="128" height="105"/>
     </elements>
 </model>

@@ -7,11 +7,17 @@
 //
 
 #import "ClustersViewController.h"
+#import "Cluster.h"
 #import "SystemsViewController.h"
+#import "ShepardTableViewCell.h"
+
+@interface ClustersViewController () {
+  Cluster *_selectedCluster;
+}
+
+@end
 
 @implementation ClustersViewController
-
-@synthesize clusters=_clusters;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -22,36 +28,57 @@
   [self.tableView setBackgroundColor:[UIColor colorWithRed:62.0/255.0 green:70.0/255.0 blue:86.0/255.0 alpha:1.0]];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if([[segue identifier] isEqualToString:@"Systems"]) {
+    
+    SystemsViewController *systemsVC = [segue destinationViewController];
+    [systemsVC setCluster:_selectedCluster];
+    
+  }
+}
+
+#pragma mark - Helper Methods
+
+- (void)clustersWereCreated:(NSNotification *)notification {
+  _fetchedResultsController = nil;
+  [[self tableView] reloadData];
+}
+
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [_clusters count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  static NSString *CellIdentifier = @"Cell";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+- (NSFetchedResultsController *)fetchedResultsController {
   
-  if (cell == nil) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+  if(_fetchedResultsController != nil) {
+    return _fetchedResultsController;
   }
   
-  NSString *clusterName = [[_clusters objectAtIndex:indexPath.row] objectForKey:@"name"];
+  _fetchedResultsController = [Cluster MR_fetchAllSortedBy:@"title" ascending:YES withPredicate:nil groupBy:nil delegate:self];
+  
+  return _fetchedResultsController;
+  
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return [[self.fetchedResultsController sections] count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  static NSString *CellIdentifier = @"ClusterCell";
+  ShepardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  
+  if (cell == nil) {
+    cell = [[ShepardTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+  }
+  
+  Cluster *cluster = [_fetchedResultsController objectAtIndexPath:indexPath];
+  
+  NSString *clusterName = [cluster title];
   
   [[cell textLabel] setText:clusterName];
-  [[cell textLabel] setTextColor:[UIColor whiteColor]];
-  
-  [[cell textLabel] setFont:[UIFont fontWithName:@"Mass Effect Game 123" size:12]];
-  
-  [cell setBackgroundColor:[UIColor clearColor]];
   
   return cell;
 }
@@ -59,11 +86,9 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  SystemsViewController *systemsVC = [[SystemsViewController alloc] init];
-  [systemsVC setSystemDictionary:[_clusters objectAtIndex:indexPath.row]];
-  [[self navigationController ] pushViewController:systemsVC animated:YES];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  _selectedCluster = [_fetchedResultsController objectAtIndexPath:indexPath];
+  [self performSegueWithIdentifier:@"Systems" sender:nil];
 }
 
 @end
