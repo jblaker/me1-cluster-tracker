@@ -10,7 +10,7 @@
 
 @class System;
 
-@interface PlanetsViewController : UITableViewController<NSFetchedResultsControllerDelegate>
+@interface PlanetsViewController : UITableViewController<NSFetchedResultsControllerDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) System *system;

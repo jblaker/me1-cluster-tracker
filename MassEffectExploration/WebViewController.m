@@ -12,20 +12,23 @@
 
 @synthesize urlToLoad=_urlToLoad;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-      _webView = [[UIWebView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-      [self.view addSubview:_webView];
-    }
-    return self;
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [self setupDismissButton];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_urlToLoad]]];
+}
+
+- (void)setupDismissButton {
+  UIBarButtonItem *dismissBtn = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(dismissSelf:)];
+  [[self navigationItem] setRightBarButtonItem:dismissBtn];
+}
+
+- (void)dismissSelf:(id)sender {
+  [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

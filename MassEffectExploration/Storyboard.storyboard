@@ -30,6 +30,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="4Mx-N4-JCP"/>
                     <connections>
                         <segue destination="meE-3N-hlY" kind="push" identifier="Systems" id="F41-XQ-0bF"/>
+                        <segue destination="baS-jS-S3W" kind="modal" identifier="WebView" id="g9E-aV-YCS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKi-W8-3W1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -62,11 +63,51 @@
                     <navigationItem key="navigationItem" id="LSk-fS-pym"/>
                     <connections>
                         <segue destination="bFr-Of-2W2" kind="push" identifier="Planets" id="Z0t-N7-sZ6"/>
+                        <segue destination="baS-jS-S3W" kind="modal" identifier="WebView" id="Dam-Dn-tj6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnr-gl-UEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1283" y="35"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="HfF-86-eue">
+            <objects>
+                <viewController id="Kaw-ff-d2s" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tfe-4N-nBr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lzc-nm-TNg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2r7-7X-5od">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1E-If-VPC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Kaw-ff-d2s" id="RNW-ds-EcF"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="d1E-If-VPC" secondAttribute="bottom" id="0UP-HY-Bcy"/>
+                            <constraint firstAttribute="trailing" secondItem="d1E-If-VPC" secondAttribute="trailing" id="Lgc-ZS-nFw"/>
+                            <constraint firstItem="d1E-If-VPC" firstAttribute="top" secondItem="2r7-7X-5od" secondAttribute="top" id="Ym3-e6-dGT"/>
+                            <constraint firstItem="d1E-If-VPC" firstAttribute="leading" secondItem="2r7-7X-5od" secondAttribute="leading" id="org-v7-OJA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FFG-Ab-gbO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="webView" destination="d1E-If-VPC" id="QE4-n7-KAF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2un-FB-N5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2213" y="-698"/>
         </scene>
         <!--Planets View Controller-->
         <scene sceneID="f9P-GR-qdX">
@@ -92,6 +133,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="dKG-ud-cjS"/>
+                    <connections>
+                        <segue destination="baS-jS-S3W" kind="modal" identifier="WebView" id="pZu-dk-3vu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QsR-Zv-cZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,10 +156,32 @@
             </objects>
             <point key="canvasLocation" x="327" y="35"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gpT-eV-xWu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="baS-jS-S3W" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="W1G-1Y-vD1"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t1J-kf-IVY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kaw-ff-d2s" kind="relationship" relationship="rootViewController" id="fZ7-NN-ejZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="arO-YK-onc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1687" y="-698"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="g9E-aV-YCS"/>
+    </inferredMetricsTieBreakers>
 </document>

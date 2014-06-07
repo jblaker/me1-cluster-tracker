@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebViewController : UIViewController {
-  UIWebView *_webView;
-}
+@interface WebViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UIWebView *webView;
 @property (nonatomic, retain) NSString *urlToLoad;
 
 @end

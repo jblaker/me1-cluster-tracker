@@ -13,6 +13,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   [MagicalRecord setupCoreDataStack];
+  [self setupAppearances];
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   if([defaults boolForKey:@"dataImported"] == NO) {
     [self prepareData];

@@ -36,17 +36,22 @@
 }
 
 - (void)launchWebView:(id)sender {
-  WebViewController *webVC = [[WebViewController alloc] init];
-  [webVC setUrlToLoad:[_cluster url]];
-  [webVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-  [self presentViewController:webVC animated:YES completion:nil];
+  [self performSegueWithIdentifier:@"WebView" sender:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  
   if([[segue identifier] isEqualToString:@"Planets"]) {
     PlanetsViewController *planetsVC = [segue destinationViewController];
     [planetsVC setSystem:_selectedSystem];
   }
+  
+  if([[segue identifier] isEqualToString:@"WebView"]) {
+    WebViewController *webVC = [[[segue destinationViewController] viewControllers] firstObject];
+    [webVC setTitle:[_cluster title]];
+    [webVC setUrlToLoad:[_cluster url]];
+  }
+  
 }
 
 #pragma mark - Table view data source
