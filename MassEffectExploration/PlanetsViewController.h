@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlanetsViewController : UITableViewController
+@class System;
 
-@property (nonatomic, retain) NSArray *planets;
+@interface PlanetsViewController : UITableViewController<NSFetchedResultsControllerDelegate>
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) System *system;
 
 @end

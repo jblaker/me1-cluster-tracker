@@ -7,33 +7,56 @@
 //
 
 #import "PlanetsViewController.h"
+#import "System.h"
+#import "Planet.h"
 
 @implementation PlanetsViewController
 
-@synthesize planets=_planets;
+@synthesize system=_system;
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [self setTitle:[_system title]];
+  UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Milky_Way_Galaxy"]];
+  [backgroundImage setAlpha:0.5];
+  [self.tableView setBackgroundView:backgroundImage];
+  [self.tableView setBackgroundColor:[UIColor colorWithRed:62.0/255.0 green:70.0/255.0 blue:86.0/255.0 alpha:1.0]];
+}
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-  return 1;
+- (NSFetchedResultsController *)fetchedResultsController {
+  
+  if(_fetchedResultsController != nil) {
+    return _fetchedResultsController;
+  }
+  
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"system == %@", _system];
+  _fetchedResultsController = [Planet MR_fetchAllSortedBy:@"title" ascending:YES withPredicate:predicate groupBy:nil delegate:self];
+  
+  return _fetchedResultsController;
+  
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-  return [_planets count];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return [[[self fetchedResultsController] sections] count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  static NSString *CellIdentifier = @"Cell";
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return [[[[self fetchedResultsController] sections] objectAtIndex:section] numberOfObjects];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  static NSString *CellIdentifier = @"PlanetCell";
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   }
   
-  NSString *clusterName = [_planets objectAtIndex:indexPath.row];
+  Planet *planet = [_fetchedResultsController objectAtIndexPath:indexPath];
+  
+  NSString *clusterName = [planet title];
   
   [[cell textLabel] setText:clusterName];
   
@@ -42,8 +65,7 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 }
 

@@ -60,10 +60,42 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="LSk-fS-pym"/>
+                    <connections>
+                        <segue destination="bFr-Of-2W2" kind="push" identifier="Planets" id="Z0t-N7-sZ6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnr-gl-UEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1283" y="35"/>
+        </scene>
+        <!--Planets View Controller-->
+        <scene sceneID="f9P-GR-qdX">
+            <objects>
+                <tableViewController id="bFr-Of-2W2" customClass="PlanetsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8Bh-il-thl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlanetCell" id="hkI-Ey-Cko" customClass="ShepardTableViewCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hkI-Ey-Cko" id="LQh-VQ-ebw">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bFr-Of-2W2" id="qsX-0D-Fh4"/>
+                            <outlet property="delegate" destination="bFr-Of-2W2" id="ia0-Sq-kjD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="dKG-ud-cjS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QsR-Zv-cZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1687" y="35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zi0-JQ-waN">

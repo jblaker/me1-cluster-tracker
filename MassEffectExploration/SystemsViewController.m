@@ -12,6 +12,13 @@
 #import "System.h"
 #import "Cluster.h"
 #import "ShepardTableViewCell.h"
+#import "PlanetsViewController.h"
+
+@interface SystemsViewController () {
+  System *_selectedSystem;
+}
+
+@end
 
 @implementation SystemsViewController
 
@@ -33,6 +40,13 @@
   [webVC setUrlToLoad:[_cluster url]];
   [webVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
   [self presentViewController:webVC animated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if([[segue identifier] isEqualToString:@"Planets"]) {
+    PlanetsViewController *planetsVC = [segue destinationViewController];
+    [planetsVC setSystem:_selectedSystem];
+  }
 }
 
 #pragma mark - Table view data source
@@ -80,7 +94,8 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+  _selectedSystem = [_fetchedResultsController objectAtIndexPath:indexPath];
+  [self performSegueWithIdentifier:@"Planets" sender:nil];
 }
 
 @end
