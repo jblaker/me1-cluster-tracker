@@ -24,15 +24,13 @@
 
 @synthesize cluster=_cluster;
 
+@synthesize fetchedResultsController=_fetchedResultsController;
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self setTitle:[_cluster title]];
   UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithTitle:@"Info" style:UIBarButtonItemStylePlain target:self action:@selector(launchWebView:)];
   [[self navigationItem] setRightBarButtonItem:infoButton];
-  UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Milky_Way_Galaxy"]];
-  [backgroundImage setAlpha:0.5];
-  [self.tableView setBackgroundView:backgroundImage];
-  [self.tableView setBackgroundColor:[UIColor colorWithRed:62.0/255.0 green:70.0/255.0 blue:86.0/255.0 alpha:1.0]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

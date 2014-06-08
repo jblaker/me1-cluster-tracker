@@ -3,5 +3,6 @@
 
 target "ClusterBuddy" do
 pod 'MagicalRecord', '~> 2.2'
+pod 'FXBlurView'
 end
 

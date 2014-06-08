@@ -19,13 +19,11 @@
 
 @implementation ClustersViewController
 
+@synthesize fetchedResultsController=_fetchedResultsController;
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self setTitle:@"Clusters"];
-  UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Milky_Way_Galaxy"]];
-  [backgroundImage setAlpha:0.5];
-  [self.tableView setBackgroundView:backgroundImage];
-  [self.tableView setBackgroundColor:[UIColor colorWithRed:62.0/255.0 green:70.0/255.0 blue:86.0/255.0 alpha:1.0]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

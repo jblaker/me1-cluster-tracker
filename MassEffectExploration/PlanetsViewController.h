@@ -6,13 +6,12 @@
 //  Copyright (c) 2013 Blaker Design. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewController.h"
 
 @class System;
 
-@interface PlanetsViewController : UITableViewController<NSFetchedResultsControllerDelegate, UIActionSheetDelegate>
+@interface PlanetsViewController : BaseTableViewController<UIActionSheetDelegate>
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) System *system;
 
 @end

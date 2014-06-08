@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "484AB86076BD40129637B831"
-               BuildableName = "libPods-ClusterBuddy.a"
-               BlueprintName = "Pods-ClusterBuddy"
+               BlueprintIdentifier = "2D00802AFE3F4FDB9C294634"
+               BuildableName = "libPods-ClusterBuddy-FXBlurView.a"
+               BlueprintName = "Pods-ClusterBuddy-FXBlurView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

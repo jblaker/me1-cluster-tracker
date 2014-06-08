@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Blaker Design. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewController.h"
 
 @class Cluster;
 
-@interface SystemsViewController : UITableViewController<NSFetchedResultsControllerDelegate>
+@interface SystemsViewController : BaseTableViewController
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) Cluster *cluster;

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3FCCF8191880A4680076A921 /* me123.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FCCF8181880A4680076A921 /* me123.ttf */; };
-		3FCCF81E1880A8080076A921 /* Milky_Way_Galaxy.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCCF81D1880A8080076A921 /* Milky_Way_Galaxy.png */; };
 		3FD9291718809D7B004B5AE2 /* Cluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD9291618809D7B004B5AE2 /* Cluster.m */; };
 		3FD9291A18809D7C004B5AE2 /* Planet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD9291918809D7C004B5AE2 /* Planet.m */; };
 		3FD9291D18809D7C004B5AE2 /* System.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD9291C18809D7C004B5AE2 /* System.m */; };
@@ -21,6 +20,8 @@
 		E96261F61943DE3700A648F9 /* PlanetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96261F51943DE3700A648F9 /* PlanetCell.m */; };
 		E96261F91943E88000A648F9 /* SystemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96261F81943E88000A648F9 /* SystemCell.m */; };
 		E96261FC1943EC4000A648F9 /* ClusterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96261FB1943EC4000A648F9 /* ClusterCell.m */; };
+		E962620119442BD200A648F9 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E962620019442BD200A648F9 /* BaseTableViewController.m */; };
+		E962620519442F5800A648F9 /* dawn.png in Resources */ = {isa = PBXBuildFile; fileRef = E962620419442F5800A648F9 /* dawn.png */; };
 		E9C5A53616D9835E008B1628 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C5A53516D9835E008B1628 /* UIKit.framework */; };
 		E9C5A53816D9835E008B1628 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C5A53716D9835E008B1628 /* Foundation.framework */; };
 		E9C5A53A16D9835E008B1628 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C5A53916D9835E008B1628 /* CoreGraphics.framework */; };
@@ -41,7 +42,6 @@
 
 /* Begin PBXFileReference section */
 		3FCCF8181880A4680076A921 /* me123.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = me123.ttf; path = Fonts/me123.ttf; sourceTree = "<group>"; };
-		3FCCF81D1880A8080076A921 /* Milky_Way_Galaxy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Milky_Way_Galaxy.png; path = Images/Milky_Way_Galaxy.png; sourceTree = "<group>"; };
 		3FD9291518809D7B004B5AE2 /* Cluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cluster.h; path = Objects/Cluster.h; sourceTree = "<group>"; };
 		3FD9291618809D7B004B5AE2 /* Cluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cluster.m; path = Objects/Cluster.m; sourceTree = "<group>"; };
 		3FD9291818809D7C004B5AE2 /* Planet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Planet.h; path = Objects/Planet.h; sourceTree = "<group>"; };
@@ -64,6 +64,9 @@
 		E96261F81943E88000A648F9 /* SystemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SystemCell.m; path = TableViewCells/SystemCell.m; sourceTree = "<group>"; };
 		E96261FA1943EC4000A648F9 /* ClusterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClusterCell.h; path = TableViewCells/ClusterCell.h; sourceTree = "<group>"; };
 		E96261FB1943EC4000A648F9 /* ClusterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClusterCell.m; path = TableViewCells/ClusterCell.m; sourceTree = "<group>"; };
+		E96261FF19442BD200A648F9 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		E962620019442BD200A648F9 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		E962620419442F5800A648F9 /* dawn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dawn.png; sourceTree = "<group>"; };
 		E9C5A53216D9835E008B1628 /* ClusterBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClusterBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C5A53516D9835E008B1628 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E9C5A53716D9835E008B1628 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -118,7 +121,7 @@
 		3FCCF81A1880A6D90076A921 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3FCCF81D1880A8080076A921 /* Milky_Way_Galaxy.png */,
+				E962620419442F5800A648F9 /* dawn.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -238,6 +241,8 @@
 				E9E89C4916D9DC7300969980 /* PlanetsViewController.m */,
 				E9E89C4B16D9E28200969980 /* WebViewController.h */,
 				E9E89C4C16D9E28200969980 /* WebViewController.m */,
+				E96261FF19442BD200A648F9 /* BaseTableViewController.h */,
+				E962620019442BD200A648F9 /* BaseTableViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -301,8 +306,8 @@
 				E9C5A54C16D9835E008B1628 /* Default@2x.png in Resources */,
 				3FCCF8191880A4680076A921 /* me123.ttf in Resources */,
 				E9C5A54E16D9835E008B1628 /* Default-568h@2x.png in Resources */,
+				E962620519442F5800A648F9 /* dawn.png in Resources */,
 				E96261E91943C4C400A648F9 /* Storyboard.storyboard in Resources */,
-				3FCCF81E1880A8080076A921 /* Milky_Way_Galaxy.png in Resources */,
 				E9C5A55816D983C1008B1628 /* clusters.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +375,7 @@
 				3FD9292118809DDE004B5AE2 /* ClusterFactory.m in Sources */,
 				3FD9291D18809D7C004B5AE2 /* System.m in Sources */,
 				E9E89C4716D9DB0800969980 /* SystemsViewController.m in Sources */,
+				E962620119442BD200A648F9 /* BaseTableViewController.m in Sources */,
 				E96261F61943DE3700A648F9 /* PlanetCell.m in Sources */,
 				3FD9291A18809D7C004B5AE2 /* Planet.m in Sources */,
 				E9E89C4A16D9DC7300969980 /* PlanetsViewController.m in Sources */,
@@ -459,6 +465,7 @@
 				INFOPLIST_FILE = "MassEffectExploration/ClusterBuddy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = ClusterBuddy;
+				PROVISIONING_PROFILE = "05271A61-897F-4362-8949-29D1BB63F915";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -472,6 +479,7 @@
 				INFOPLIST_FILE = "MassEffectExploration/ClusterBuddy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = ClusterBuddy;
+				PROVISIONING_PROFILE = "05271A61-897F-4362-8949-29D1BB63F915";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -26,8 +26,12 @@
 }
 
 - (void)setupAppearances {
-  NSDictionary *navControllerTitleFont = [NSDictionary dictionaryWithObjects:@[[UIFont fontWithName:@"Mass Effect Game 123" size:20]] forKeys:@[NSFontAttributeName]];
-  [[UINavigationBar appearance] setTitleTextAttributes:navControllerTitleFont];
+  NSDictionary *textAtts = [NSDictionary dictionaryWithObjects:@[[UIFont fontWithName:@"Mass Effect Game 123" size:15], [UIColor colorWithRed:174.0f/255.0f green:8.0f/255.0f blue:17.0f/255.0f alpha:1.0f]] forKeys:@[NSFontAttributeName, NSForegroundColorAttributeName]];
+  [[UINavigationBar appearance] setTitleTextAttributes:textAtts];
+  [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+  
+  textAtts = [NSDictionary dictionaryWithObjects:@[[UIFont fontWithName:@"Mass Effect Game 123" size:11]] forKeys:@[NSFontAttributeName]];
+  [[UIBarButtonItem appearance] setTitleTextAttributes:textAtts forState:UIControlStateNormal];
 }
 
 - (void)prepareData {
