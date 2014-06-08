@@ -26,4 +26,7 @@
 - (void)addPlanets:(NSSet *)values;
 - (void)removePlanets:(NSSet *)values;
 
+- (NSInteger)numberOfExploredPlanets;
+- (BOOL)fullyExplored;
+
 @end

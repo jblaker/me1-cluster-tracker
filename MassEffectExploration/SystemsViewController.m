@@ -11,8 +11,8 @@
 #import "WebViewController.h"
 #import "System.h"
 #import "Cluster.h"
-#import "ShepardTableViewCell.h"
 #import "PlanetsViewController.h"
+#import "SystemCell.h"
 
 @interface SystemsViewController () {
   System *_selectedSystem;
@@ -33,6 +33,11 @@
   [backgroundImage setAlpha:0.5];
   [self.tableView setBackgroundView:backgroundImage];
   [self.tableView setBackgroundColor:[UIColor colorWithRed:62.0/255.0 green:70.0/255.0 blue:86.0/255.0 alpha:1.0]];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [[self tableView] reloadData];
 }
 
 - (void)launchWebView:(id)sender {
@@ -77,20 +82,13 @@
   return [[[[self fetchedResultsController] sections] objectAtIndex:section] numberOfObjects];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *CellIdentifier = @"SystemCell";
-  ShepardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  SystemCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
-  if (cell == nil) {
-    cell = [[ShepardTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-  }
+  System *system = [_fetchedResultsController objectAtIndexPath:indexPath];
   
-  Cluster *cluster = [_fetchedResultsController objectAtIndexPath:indexPath];
-  
-  NSString *clusterName = [cluster title];
-  
-  [[cell textLabel] setText:clusterName];
+  [cell setSystem:system];
   
   return cell;
 }

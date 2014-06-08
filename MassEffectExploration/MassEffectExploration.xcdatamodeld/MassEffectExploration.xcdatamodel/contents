@@ -20,8 +20,8 @@
         <relationship name="planets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Planet" inverseName="system" inverseEntity="Planet" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Cluster" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="Cluster" positionX="0" positionY="0" width="128" height="88"/>
         <element name="Planet" positionX="0" positionY="0" width="128" height="133"/>
-        <element name="System" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="System" positionX="0" positionY="0" width="128" height="103"/>
     </elements>
 </model>

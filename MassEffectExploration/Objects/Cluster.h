@@ -24,4 +24,6 @@
 - (void)addSystems:(NSSet *)values;
 - (void)removeSystems:(NSSet *)values;
 
+- (NSInteger)numberOfExploredSystems;
+
 @end

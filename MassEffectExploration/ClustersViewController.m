@@ -9,7 +9,7 @@
 #import "ClustersViewController.h"
 #import "Cluster.h"
 #import "SystemsViewController.h"
-#import "ShepardTableViewCell.h"
+#import "ClusterCell.h"
 
 @interface ClustersViewController () {
   Cluster *_selectedCluster;
@@ -26,6 +26,11 @@
   [backgroundImage setAlpha:0.5];
   [self.tableView setBackgroundView:backgroundImage];
   [self.tableView setBackgroundColor:[UIColor colorWithRed:62.0/255.0 green:70.0/255.0 blue:86.0/255.0 alpha:1.0]];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [[self tableView] reloadData];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -68,17 +73,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *CellIdentifier = @"ClusterCell";
-  ShepardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  
-  if (cell == nil) {
-    cell = [[ShepardTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-  }
+  ClusterCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
   Cluster *cluster = [_fetchedResultsController objectAtIndexPath:indexPath];
   
-  NSString *clusterName = [cluster title];
-  
-  [[cell textLabel] setText:clusterName];
+  [cell setCluster:cluster];
   
   return cell;
 }

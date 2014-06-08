@@ -19,6 +19,8 @@
 		E96261EF1943CC2700A648F9 /* PlanetFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E96261EE1943CC2700A648F9 /* PlanetFactory.m */; };
 		E96261F31943D37200A648F9 /* ShepardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96261F21943D37200A648F9 /* ShepardTableViewCell.m */; };
 		E96261F61943DE3700A648F9 /* PlanetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96261F51943DE3700A648F9 /* PlanetCell.m */; };
+		E96261F91943E88000A648F9 /* SystemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96261F81943E88000A648F9 /* SystemCell.m */; };
+		E96261FC1943EC4000A648F9 /* ClusterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96261FB1943EC4000A648F9 /* ClusterCell.m */; };
 		E9C5A53616D9835E008B1628 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C5A53516D9835E008B1628 /* UIKit.framework */; };
 		E9C5A53816D9835E008B1628 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C5A53716D9835E008B1628 /* Foundation.framework */; };
 		E9C5A53A16D9835E008B1628 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C5A53916D9835E008B1628 /* CoreGraphics.framework */; };
@@ -58,6 +60,10 @@
 		E96261F21943D37200A648F9 /* ShepardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShepardTableViewCell.m; path = TableViewCells/ShepardTableViewCell.m; sourceTree = "<group>"; };
 		E96261F41943DE3700A648F9 /* PlanetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlanetCell.h; path = TableViewCells/PlanetCell.h; sourceTree = "<group>"; };
 		E96261F51943DE3700A648F9 /* PlanetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlanetCell.m; path = TableViewCells/PlanetCell.m; sourceTree = "<group>"; };
+		E96261F71943E88000A648F9 /* SystemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SystemCell.h; path = TableViewCells/SystemCell.h; sourceTree = "<group>"; };
+		E96261F81943E88000A648F9 /* SystemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SystemCell.m; path = TableViewCells/SystemCell.m; sourceTree = "<group>"; };
+		E96261FA1943EC4000A648F9 /* ClusterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClusterCell.h; path = TableViewCells/ClusterCell.h; sourceTree = "<group>"; };
+		E96261FB1943EC4000A648F9 /* ClusterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClusterCell.m; path = TableViewCells/ClusterCell.m; sourceTree = "<group>"; };
 		E9C5A53216D9835E008B1628 /* ClusterBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClusterBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C5A53516D9835E008B1628 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E9C5A53716D9835E008B1628 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -150,6 +156,10 @@
 				E96261F21943D37200A648F9 /* ShepardTableViewCell.m */,
 				E96261F41943DE3700A648F9 /* PlanetCell.h */,
 				E96261F51943DE3700A648F9 /* PlanetCell.m */,
+				E96261F71943E88000A648F9 /* SystemCell.h */,
+				E96261F81943E88000A648F9 /* SystemCell.m */,
+				E96261FA1943EC4000A648F9 /* ClusterCell.h */,
+				E96261FB1943EC4000A648F9 /* ClusterCell.m */,
 			);
 			name = "Table Cells";
 			sourceTree = "<group>";
@@ -355,6 +365,7 @@
 				E9C5A55116D9835E008B1628 /* MassEffectExploration.xcdatamodeld in Sources */,
 				E96261F31943D37200A648F9 /* ShepardTableViewCell.m in Sources */,
 				E96261EF1943CC2700A648F9 /* PlanetFactory.m in Sources */,
+				E96261FC1943EC4000A648F9 /* ClusterCell.m in Sources */,
 				E9E89C4416D9D8B600969980 /* ClustersViewController.m in Sources */,
 				3FD9292118809DDE004B5AE2 /* ClusterFactory.m in Sources */,
 				3FD9291D18809D7C004B5AE2 /* System.m in Sources */,
@@ -362,6 +373,7 @@
 				E96261F61943DE3700A648F9 /* PlanetCell.m in Sources */,
 				3FD9291A18809D7C004B5AE2 /* Planet.m in Sources */,
 				E9E89C4A16D9DC7300969980 /* PlanetsViewController.m in Sources */,
+				E96261F91943E88000A648F9 /* SystemCell.m in Sources */,
 				3FD9291718809D7B004B5AE2 /* Cluster.m in Sources */,
 				E9E89C4D16D9E28200969980 /* WebViewController.m in Sources */,
 				E96261EC1943C75A00A648F9 /* SystemFactory.m in Sources */,

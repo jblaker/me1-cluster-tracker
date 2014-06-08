@@ -18,4 +18,14 @@
 @dynamic cluster;
 @dynamic planets;
 
+- (NSInteger)numberOfExploredPlanets {
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"system == %@ AND explored == 1", self];
+  NSArray *totalPlanets = [Planet MR_findAllWithPredicate:predicate];
+  return [totalPlanets count];
+}
+
+- (BOOL)fullyExplored {
+  return self.numberOfExploredPlanets == self.planets.count;
+}
+
 @end
