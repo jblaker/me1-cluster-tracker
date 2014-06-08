@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSString *url;
 @property (nonatomic, retain) NSString * notes;
 @property (nonatomic, retain) NSNumber * flagged;
+@property (nonatomic, retain) NSNumber * explored;
 @property (nonatomic, retain) NSManagedObject *system;
 
 @end

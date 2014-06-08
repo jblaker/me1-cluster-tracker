@@ -10,6 +10,7 @@
 #import "System.h"
 #import "Planet.h"
 #import "WebViewController.h"
+#import "PlanetCell.h"
 
 @interface PlanetsViewController () {
   Planet *_selectedPlanet;
@@ -56,6 +57,13 @@
   [self performSegueWithIdentifier:@"WebView" sender:nil];
 }
 
+- (void)toggleExplorationStatusForPlanet:(Planet *)planet {
+  [planet setExplored:[NSNumber numberWithBool:!planet.explored.boolValue]];
+  [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+    [[self tableView] reloadData];
+  }];
+}
+
 #pragma mark - Table view data source
 
 - (NSFetchedResultsController *)fetchedResultsController {
@@ -81,17 +89,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *CellIdentifier = @"PlanetCell";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  
-  if (cell == nil) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-  }
+  PlanetCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
   Planet *planet = [_fetchedResultsController objectAtIndexPath:indexPath];
   
-  NSString *clusterName = [planet title];
-  
-  [[cell textLabel] setText:clusterName];
+  [cell setPlanet:planet];
   
   return cell;
 }
@@ -99,8 +101,9 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
   _selectedPlanet = [_fetchedResultsController objectAtIndexPath:indexPath];
-  UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Info", @"Toggle explored", nil];
+  UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:_selectedPlanet.title delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Info", @"Toggle explored", nil];
   [actionSheet showInView:self.view];
 }
 
@@ -113,6 +116,7 @@
       [self performSegueWithIdentifier:@"WebView" sender:nil];
       break;
     case 1:
+      [self toggleExplorationStatusForPlanet:_selectedPlanet];
       break;
   }
   

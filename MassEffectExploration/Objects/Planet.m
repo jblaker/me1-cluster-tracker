@@ -15,6 +15,7 @@
 @dynamic url;
 @dynamic notes;
 @dynamic flagged;
+@dynamic explored;
 @dynamic system;
 
 @end

@@ -21,6 +21,10 @@
   return YES;
 }
 
+- (void)applicationWillTerminate:(UIApplication *)application {
+  [MagicalRecord cleanUp];
+}
+
 - (void)setupAppearances {
   NSDictionary *navControllerTitleFont = [NSDictionary dictionaryWithObjects:@[[UIFont fontWithName:@"Mass Effect Game 123" size:20]] forKeys:@[NSFontAttributeName]];
   [[UINavigationBar appearance] setTitleTextAttributes:navControllerTitleFont];
